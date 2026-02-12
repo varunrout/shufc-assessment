@@ -1,0 +1,278 @@
+customer_id,customer_type,country,district,ward,distance_to_bramall_lane_km,age,gender,exclude_from_marketing
+4b94042c-49bc-44b6-8d2b-8df5ba2c8dd8,Customer,England,Rotherham,Thurcroft & Wickersley South,13.07,60,Male,false
+642fbec8-3692-42a0-bbec-d8c92e58c8b0,Customer,England,Rotherham,Rawmarsh West,13.82,18,Male,false
+8b02fae3-66d3-406e-8408-b4b76032fe89,Customer,England,Bath and North East Somerset,Saltford,229.23,47,Female,true
+b1c67976-9cbe-4af0-9e47-58ddfb36da6f,Customer,England,Sheffield,City,0.05,37,Male,false
+49acc551-05ce-4a06-9364-21b5ab9c2715,Customer,England,Kirklees,Liversedge and Gomersal,42.75,64,Male,false
+c01437b0-0aa7-e911-80e7-0050560100ae,Customer,England,Sheffield,Ecclesall,4.06,69,Unspecified,false
+404a0a70-2af5-ef11-84f5-d137990181fc,Account,England,Chesterfield,Dunston,11.41,null,Unspecified,true
+be7a61b0-9fe2-4310-ad6e-e99980992917,Customer,England,Amber Valley,Crich & South Wingfield,30.01,42,Male,true
+eb58b4d1-5bae-41bc-8a3f-0bd4f2fedf28,Customer,England,Sheffield,Beighton,6.50,46,Male,false
+f2d1ee47-aaad-43c2-92e0-765af45684a3,Customer,England,High Peak,Hope Valley,18.27,64,Male,true
+6901fca7-8596-ed11-83d1-de321cb623a0,Account,England,Sheffield,City,2.45,null,Unspecified,true
+74fa545f-02d2-48bc-8d76-3d9264a56b13,Account,England,Sheffield,Ecclesall,2.52,null,Unspecified,false
+30a871a2-e02a-ee11-8444-a581cfc4f59c,Customer,England,Sheffield,Dore and Totley,4.64,72,Male,true
+fd2167b1-bae7-4dda-aed1-07cbb8587474,Account,England,Trafford,Urmston,59.22,null,Unspecified,false
+16db680c-9037-4dd9-b1fb-417a610a07a6,Customer,United Kingdom,null,null,null,null,Unspecified,false
+86eb448a-896a-42f7-a0ff-567385c8d23a,Account,England,Rotherham,Aston & Todwick,14.20,null,Unspecified,false
+f523b94e-aedd-4f28-bb16-e98c61e08877,Customer,England,Chesterfield,Brampton West & Loundsley Green,15.09,null,Unspecified,false
+78cf9a06-5119-ed11-83ae-c1671104c551,Customer,England,North East Derbyshire,Holmewood & Heath,21.20,37,Unspecified,true
+832379a5-d573-41b0-b9e7-0e6269f57da7,Customer,England,Sheffield,City,0.05,36,Male,false
+265c1531-a930-48d8-b4cb-5eb1460b37c4,Customer,England,Sheffield,City,0.05,58,Male,false
+8617dfa0-7afc-ec11-83ae-c02a84e9951f,Account,England,North East Derbyshire,Killamarsh East,12.05,null,Unspecified,true
+3d7c9cda-caf4-4610-a81c-a34947db10b6,Customer,England,Sheffield,Dore and Totley,5.00,null,Male,false
+5bf0b4c1-349f-4e45-a956-66294d166aac,Customer,United Kingdom,null,null,null,52,Male,false
+27527839-08e3-4272-8f06-eea3f013f23a,Account,England,Sheffield,Darnall,3.98,null,Unspecified,false
+e732a737-fe27-434a-8a12-ad6e0d347bb6,Customer,England,Rotherham,Thurcroft & Wickersley South,13.78,55,Male,false
+e4e4b334-86b9-4973-ab5d-b6ac9c16e3bf,Customer,England,Sheffield,City,0.05,23,Male,false
+6d368d42-2d5c-4266-aff2-1d840d696b8b,Customer,England,Chesterfield,Spire,15.37,65,Unspecified,true
+88078064-4189-4467-b101-195c1ca9f032,Account,England,Sheffield,Stocksbridge and Upper Don,10.97,null,Unspecified,false
+ab86a8d4-33da-4d15-a818-c1f5fcd90120,Customer,Australia,null,null,null,42,Male,true
+fed4d832-a9e8-4124-b828-998a3b2961e4,Customer,England,Sheffield,Manor Castle,1.19,83,Male,false
+04526cdf-45e0-41c3-8e83-69e9bc245b22,Customer,England,Sheffield,Graves Park,3.61,50,Male,true
+d72fa94f-ebc1-ef11-84e2-f36b3ffa1e5e,Customer,null,null,null,null,null,Unspecified,true
+be30d85a-a093-43b0-8895-50c63bc31b37,Customer,England,Sheffield,Shiregreen and Brightside,6.13,44,Male,false
+b534223a-a21a-40e0-a00f-866eb1fd922d,Customer,England,Bassetlaw,Worksop North,22.70,43,Male,true
+f5440457-d292-4191-bd2a-6d4e83cd9fcb,Account,England,Sheffield,City,0.71,null,Unspecified,false
+6bacd4d0-c071-ef11-84bd-ffedec64349b,Customer,England,Sheffield,West Ecclesfield,11.41,null,Unspecified,true
+cf430bec-83f1-b701-0b8d-08ddaffbfd79,Customer,England,Rotherham,Aughton & Swallownest,8.97,null,Unspecified,true
+cd86a1ff-a3e8-4299-a8ae-46eab51c601e,Customer,England,Bassetlaw,Worksop North West,21.62,92,Male,false
+3ed21281-ccdf-456b-a34c-079ec3696de6,Account,England,North Lincolnshire,Brigg & Wolds,67.91,null,Unspecified,false
+6a38f841-4f6c-4212-9fe9-b13526e92774,Customer,England,Rotherham,Rawmarsh West,13.82,46,Male,false
+2bceedfa-4d22-4dee-9baa-7a8d16d72742,Customer,England,Derbyshire Dales,Hathersage,13.91,73,Male,false
+16147c19-f584-44ea-bc2b-c89009ecebce,Customer,England,Derby,Chellaston & Shelton Lock,55.60,80,Male,true
+061bf06a-534c-ec11-8350-b66635cfa68d,Account,England,Sheffield,Nether Edge and Sharrow,0.76,null,Unspecified,true
+e0d0ced8-2402-ef11-8445-f48914bf7126,Customer,England,Sheffield,Graves Park,2.39,26,Unspecified,true
+8597be0a-73c2-41b2-bd41-4bc1c7f838f7,Customer,England,Sheffield,Richmond,5.06,58,Male,false
+4b029759-c87c-4c49-a570-29e4a9d69240,Customer,England,Sheffield,City,0.05,58,Male,false
+a6605b3b-9469-ed11-83d1-ea9028dbdfae,Account,England,Sheffield,Richmond,4.30,null,Unspecified,true
+5bc35fda-a3aa-44c7-8df7-23965246c13b,Customer,England,Sheffield,Stocksbridge and Upper Don,12.47,40,Male,true
+54ab07ae-780b-4d14-9475-509cc6eac83e,Customer,England,Doncaster,Rossington & Bawtry,29.92,79,Male,false
+28cc657e-eb5c-4ad3-90b5-3986eef5a8f7,Customer,England,Sheffield,Dore and Totley,4.83,66,Male,false
+25c0c7c8-ee9e-4c22-aac1-21d81aa71907,Customer,England,Sheffield,Fulwood,6.06,65,Male,true
+4155b9f3-bc05-ec11-8315-bff3dee54289,Account,England,Derbyshire Dales,Chatsworth,15.56,null,Unspecified,true
+90a1bf21-2d18-4692-b48f-4e31da627541,Account,England,Sheffield,Nether Edge and Sharrow,1.80,null,Unspecified,false
+84dce882-af00-4b7a-ab11-12235db648dc,Customer,United Kingdom,null,null,null,null,Unspecified,false
+0fd06bb4-13ab-4857-9235-64367b5a0e76,Customer,England,Sheffield,Crookes and Crosspool,4.49,45,Male,false
+66f492d8-a3a6-496d-916b-82bd69094c1c,Customer,England,Sheffield,Ecclesall,3.96,71,Male,false
+1a27e608-181b-437e-891d-68c8c0b1ce75,Customer,Israel,null,null,null,51,Male,true
+b96d45aa-ebc1-ef11-84e2-f36b3ffa1e5e,Customer,null,null,null,null,null,Unspecified,true
+448deb03-7e59-4c21-bd01-0ce9360da6bb,Account,England,Sheffield,Graves Park,3.04,null,Unspecified,false
+857529c4-767b-4352-a814-84ec3ccad51d,Customer,England,North East Derbyshire,Dronfield North,7.12,49,Male,true
+fd673d16-f657-4ef6-a6fc-bccd6e31b1e6,Customer,England,Trafford,Gorse Hill & Cornbrook,53.91,20,Male,false
+0f3c6ac3-0028-ef11-8444-c3f0b0cc86db,Account,England,Rotherham,Rotherham West,9.30,null,Unspecified,true
+3bbb5438-1187-48ef-81bd-773d2957720b,Customer,England,Bassetlaw,Worksop North West,20.63,23,Female,true
+3d703b5a-f978-4e25-afa3-6da5b21c3cf9,Customer,England,Sheffield,Beauchief and Greenhill,4.25,34,Male,true
+20a2287c-4f43-ef11-84a5-d4866d756a55,Account,England,Sheffield,City,1.74,null,Unspecified,true
+3cda4f84-2e63-4602-a5a2-f53f19a5996d,Account,England,Chesterfield,Staveley Central,14.64,null,Unspecified,false
+59f32be6-acfc-425f-9d04-b38e0ed9cda1,Account,England,Sheffield,City,0.05,null,Unspecified,false
+296a03c1-289d-47b1-9835-f4d175225517,Customer,England,Barnsley,Penistone East,20.98,78,Male,false
+17fbf7cc-fef3-e911-80e7-0050560100ae,Customer,England,Sheffield,Beauchief and Greenhill,5.44,null,Unspecified,false
+b4d7dc76-a29d-e911-80e7-0050560100ae,Account,England,Sheffield,Hillsborough,3.51,null,Unspecified,false
+ac9b3fe2-0380-42ae-be2b-37880184fe44,Account,England,Barnsley,Penistone East,19.27,null,Unspecified,false
+33a60b0c-6dfb-4ef6-8309-9f6fa15bea48,Customer,England,Sheffield,Graves Park,2.78,37,Male,false
+7889052b-362e-4019-a7ab-b589ac3f23c2,Customer,England,Sheffield,Mosborough,7.58,44,Male,true
+28cebff4-4809-4ecb-a087-b5d016e8612b,Customer,England,Westmorland and Furness,Kendal Nether,135.30,67,Male,true
+ba3de032-0e49-4144-9d15-914d0539b2fe,Customer,England,Chesterfield,Hasland,17.55,65,Male,true
+544ac0d2-5416-4903-9c1e-98f7f164fb00,Customer,England,Barnsley,Darfield,19.54,67,Male,false
+407b5f57-78f3-eb11-8315-f7c9413d0c27,Account,England,Sheffield,City,2.03,null,Unspecified,true
+1dd2aec9-e438-408c-b50a-bb1dee48286f,Account,England,Sheffield,City,2.45,null,Unspecified,false
+5baef0c2-e957-ea11-80e9-0050560100ae,Account,England,Sheffield,Beauchief and Greenhill,5.07,null,Unspecified,false
+8446cdde-9175-43d7-bf41-54affb1d5f29,Customer,England,Barnsley,Penistone West,19.92,41,Female,true
+82045bcd-ad9d-e911-80e7-0050560100ae,Customer,England,Sheffield,Richmond,4.20,67,Unspecified,false
+31f86814-61c6-4224-a3e0-2cb084f69bfc,Account,England,Sheffield,Mosborough,9.74,null,Unspecified,false
+faa2ec94-8997-476d-b813-d99156a73d29,Customer,England,Barnsley,Dodworth,19.92,36,Male,false
+8ce1757c-c7bb-eb11-80ea-0050560100ae,Customer,England,Rotherham,Thurcroft & Wickersley South,13.22,40,Male,false
+98bb11dc-6015-ed11-83ae-ce38f2cbd892,Customer,England,Sheffield,Park and Arbourthorne,3.70,51,Unspecified,true
+dbadc948-9dc9-482d-9ed9-45d80de2d116,Customer,England,Sheffield,Mosborough,9.38,83,Male,false
+ab0201a9-d747-4f30-aeaa-8970d3e3dd06,Customer,England,Central Bedfordshire,Leighton-Linslade West,169.76,29,Male,false
+91e831b2-5a13-4eaa-8a69-d595c060b143,Account,England,Rotherham,Boston Castle,8.42,null,Unspecified,false
+b0837376-9365-4cc8-be81-55de5249c25d,Customer,England,Sheffield,Stannington,5.63,78,Male,false
+cec0dd73-6e0c-475b-8d97-8471b83b0476,Customer,England,Rotherham,Aston & Todwick,11.03,68,Male,false
+0d672dfa-b1af-40d6-b2e5-6c21ad1ea2a3,Customer,England,South Gloucestershire,Staple Hill & Mangotsfield,221.39,20,Male,true
+1611211a-c274-476d-9e92-73922312ddd1,Customer,England,Sheffield,City,0.05,47,Male,false
+63aa4941-6a04-ee11-8444-abe2baa3649b,Account,England,Barnsley,Darton East,23.98,null,Unspecified,true
+0bbf3c10-6e41-4c2b-bb3b-c7bb3e86ab90,Customer,England,Sheffield,Darnall,3.58,40,Male,false
+4850f710-1029-49dd-8d0b-aaf3a052a77c,Customer,England,Barnsley,Darfield,17.98,52,Female,false
+78d9b5d9-7901-44a0-823c-c2caab4a7129,Customer,England,Derbyshire Dales,Darley Dale,24.93,70,Female,false
+a18f497e-b46d-4335-b67e-0216571d3bff,Customer,England,Sheffield,Stocksbridge and Upper Don,14.05,70,Female,true
+b64e60db-98ab-4389-b241-b4c39350c408,Customer,England,Sheffield,City,0.05,null,Male,false
+46bc09e3-102f-4a8b-b160-6a2d0c4c0c32,Customer,England,Sheffield,City,0.05,null,Unspecified,false
+b49f68f7-ae8d-4372-9004-4391d03bb372,Customer,United Kingdom,null,null,null,62,Male,true
+a67a209c-3bc3-48d9-a6c3-bc9c4904829b,Customer,England,High Peak,Hope Valley,18.27,74,Male,false
+ed3f0bec-83f1-b701-d4aa-08ddaffabaae,Customer,England,Sheffield,Mosborough,7.58,null,Unspecified,true
+e9607079-bc84-4c21-bcec-e3837e36cf2d,Customer,England,Rotherham,Wales,13.92,44,Male,false
+0a8c0610-ec4b-4bf5-b126-986a330023e4,Customer,England,York,Heworth,71.93,53,Male,false
+63b10301-0003-60a6-7646-08de590b83ba,Customer,United Kingdom,null,null,null,null,Unspecified,true
+a5f14f93-b835-4013-a219-e65141f0a9b1,Customer,null,null,null,null,null,Unspecified,false
+f51a5e99-7c66-4810-bc1c-e12e5720b18d,Account,England,Sheffield,Stannington,11.58,null,Unspecified,false
+fd55330e-28f6-ed11-8444-f77a84cb8a09,Account,England,High Peak,Hope Valley,18.26,null,Unspecified,true
+6decc322-b90d-ed11-83ae-8ff7ee3adc9d,Account,Italy,null,null,null,null,Unspecified,true
+1064cd9b-b786-413b-b3d9-a097eaaa0d07,Customer,England,Wiltshire,Chippenham Hardenhuish,215.28,35,Male,true
+8b957690-6087-4f66-a579-dea9af8939f5,Customer,England,Sheffield,Stannington,11.58,76,Male,true
+a15a02f0-09f1-b701-f91d-08ddb25da49f,Account,null,null,null,null,null,Unspecified,true
+b75cbbb7-6a23-4540-8c1d-cc470a8e7155,Customer,England,Sheffield,Ecclesall,3.97,61,Male,false
+fb1ccb7d-e167-4b27-8ee4-1cdb8b2d8289,Customer,England,Barnsley,Darfield,19.54,null,Female,false
+f62aebb4-9240-ec11-8350-95e197523a6c,Account,England,Derbyshire Dales,Hathersage,12.93,null,Unspecified,true
+0c684023-a14b-4e54-82a4-c40fd238e819,Customer,England,Sheffield,Dore and Totley,4.61,79,Male,false
+c752246e-5d81-470f-bebd-fb8b6741c1e5,Customer,England,Sheffield,Walkley,1.87,76,Male,true
+4c52f705-9b8f-41f5-b1c8-cf807ab094fe,Account,England,Sheffield,Darnall,4.96,null,Unspecified,false
+d0df204f-f8f3-4980-86d2-eeb08a5e6682,Customer,England,Sheffield,West Ecclesfield,11.14,86,Male,false
+c6aa9d83-7114-4e52-853d-bb22979e21ea,Customer,England,Sheffield,Dore and Totley,7.01,63,Male,false
+1f17f30f-cd04-40e2-bd99-7fee890b90cc,Customer,England,Sheffield,Dore and Totley,7.01,63,Female,false
+d006fc51-1e93-46d5-8df3-790981239d5d,Customer,England,Barnsley,Penistone East,16.04,57,Male,false
+13d45e11-8d3f-422e-a057-daa9de5ed866,Customer,England,East Riding of Yorkshire,St Marys,85.80,73,Male,false
+6c925c9e-17ac-4035-b8e7-89114372c1f4,Account,England,Barnsley,Dodworth,19.92,null,Unspecified,false
+af996fe5-1ef1-eb11-8315-f7c9413d0c27,Account,England,Sheffield,Park and Arbourthorne,3.70,null,Unspecified,true
+c30054fd-045b-4824-9241-a131679c735f,Customer,England,Derbyshire Dales,Hathersage,13.91,75,Female,true
+7bababc7-20ab-4e03-9b5a-e800ec314c96,Customer,England,Sheffield,City,0.05,36,Male,false
+f9410c30-56f1-b701-3751-08dd8f0afbc1,Customer,null,null,null,null,null,Unspecified,true
+e94b921c-d4f3-ec11-83ae-f820e8d33f75,Account,England,Sheffield,Gleadless Valley,0.95,null,Unspecified,true
+1f2ac785-f209-4e7a-8942-b621715296a7,Customer,England,Sheffield,Fulwood,4.65,61,Male,false
+defcf4d3-d509-ed11-83ae-c1c9eadd1850,Account,United Kingdom,null,null,null,null,Unspecified,true
+86a92aad-6f35-4a23-be55-41beb138384c,Customer,England,Tendring,The Oakleys & Wix,241.25,69,Male,true
+70315235-eff7-46cd-8a8a-3c053b0bf04e,Customer,England,Rotherham,Aston & Todwick,11.03,42,Female,false
+82a443d3-4be5-eb11-8315-947348d673c9,Account,England,Rotherham,Aughton & Swallownest,9.31,null,Unspecified,true
+c716b103-2000-ec11-8315-e8d7520cced3,Account,England,North East Derbyshire,Dronfield South,7.64,null,Unspecified,true
+c0582f3f-90d1-47fd-98f4-352738207834,Account,England,Sheffield,Burngreave,4.31,null,Unspecified,false
+acebec7f-06b2-4fb9-bc37-4cfd9f62f337,Customer,England,Rotherham,Wales,14.65,53,Male,false
+60e50fef-5d81-4070-a52c-a79448c341e2,Customer,England,Rotherham,Wales,14.98,84,Female,false
+da2492f1-753f-4e93-984e-1d5b8e03158d,Account,England,Sheffield,Burngreave,2.51,null,Unspecified,false
+9b543bed-1f32-4c11-8d8e-a1319b330e09,Customer,England,Sheffield,Ecclesall,2.82,null,Male,false
+b255946a-101e-46c9-96bc-e3e619f15872,Customer,England,North East Derbyshire,Eckington North,9.54,78,Male,false
+a4b522c0-a596-4ccf-b09f-2a26e7a0fe1e,Customer,England,Sheffield,City,0.05,46,Male,false
+1c5a02fd-527a-4a76-8b44-4aa1b8878739,Customer,null,null,null,null,78,Unspecified,true
+b79e5b87-1021-ec11-8315-ff5922109dbe,Customer,England,North East Derbyshire,Killamarsh East,12.05,null,Unspecified,true
+9309c826-2cc1-4f3b-b556-2774fe500f51,Customer,England,Bolsover,Ault Hucknall,22.55,49,Male,false
+748c245c-80b7-4f26-ae35-3fde95c1bbfb,Customer,England,Sheffield,Stocksbridge and Upper Don,14.05,null,Female,false
+d496447e-19b9-42ce-ae57-92f1336be2a1,Customer,England,Sheffield,Dore and Totley,7.51,71,Male,false
+193f3c8f-6cd6-49a3-94cc-e4c46d5ea091,Customer,England,Rotherham,Wales,14.98,54,Male,true
+6da6018f-e706-455c-a145-55577ae32b25,Customer,England,Sheffield,Dore and Totley,6.40,63,Male,true
+26177bf8-ca5b-ef11-84bd-e5541cc76e36,Customer,null,null,null,null,null,Unspecified,true
+72de7608-2399-e911-80e7-0050560100ae,Customer,England,Derbyshire Dales,Hathersage,12.57,59,Unspecified,false
+62993799-c037-4c64-89b9-57a16b134e79,Customer,England,Dudley,St. Thomass,103.65,43,Male,true
+9f97ffa7-341b-4e2a-b63f-2faf3db40dfc,Customer,England,Sheffield,City,0.05,null,Unspecified,false
+7ea3b111-d2cc-49af-b642-f8b74015d467,Customer,England,Sheffield,City,0.05,null,Male,false
+a5365256-4ff1-eb11-8315-f7c9413d0c27,Customer,England,Sheffield,Dore and Totley,7.21,82,Male,true
+b9670d55-7cc1-4ec2-981a-66cb53d231a5,Customer,England,North East Derbyshire,Barlow & Holmesfield,9.29,68,Male,false
+de483bba-a439-4b72-9d54-07801075e82f,Customer,England,North East Derbyshire,Shirland,27.26,null,Male,false
+729208ed-80aa-4cab-8c6a-1b66b0d2c818,Account,England,Sheffield,Darnall,3.25,null,Unspecified,false
+1eeb90e4-7b68-437b-986b-9b4518596ae4,Customer,Australia,null,null,null,56,Male,true
+6bdf112c-d926-ee11-8444-db64c9fc3f27,Account,England,Westminster,Marylebone,224.52,null,Unspecified,true
+0c6796ad-15bf-4488-9120-b7cba56006d4,Account,England,Sheffield,City,0.05,null,Unspecified,false
+fcf11082-4675-4ad3-8e7d-8ffe14d12690,Account,England,Chesterfield,Dunston,11.61,null,Unspecified,false
+e8d57558-4c9b-473d-bea0-1b2d3113e8de,Customer,England,North Somerset,Portishead North,226.39,62,Male,true
+8ad3eaa5-148e-4179-9551-dca2037e8c01,Customer,England,Sheffield,East Ecclesfield,8.52,60,Male,false
+6864ec17-8bae-48fc-9f29-a6a3072b54f0,Customer,England,Sheffield,City,0.05,57,Female,false
+142f9c4b-4e89-46d8-9601-b1a69a12bc41,Account,England,Sheffield,City,0.83,null,Unspecified,false
+2103e018-36a9-4341-8f1e-7af1dc631cbe,Customer,England,Rotherham,Hoober,17.12,47,Female,false
+2dbc25d0-540e-ed11-83ae-8ff7ee3adc9d,Account,England,North East Derbyshire,Eckington South & Renishaw,12.57,null,Unspecified,true
+b77dbb99-1f13-46cf-b454-3ac90ac38113,Customer,England,Sheffield,Crookes and Crosspool,4.59,null,Male,false
+4c729d04-4023-4554-baab-c0b01b663f34,Customer,England,Sheffield,Crookes and Crosspool,4.15,84,Male,false
+5f7eb934-1a12-4903-922c-248802bcb226,Account,England,Sheffield,Ecclesall,3.02,null,Unspecified,false
+42e906ac-4cf1-b701-6189-08ddd5b54f3d,Customer,null,null,null,null,null,Unspecified,true
+ffc41572-0504-466f-a3a8-4bba8365c67d,Customer,United Kingdom,null,null,null,84,Male,false
+b2ab0e5a-61af-4aa7-ad3d-5fcd3eebce54,Customer,United Kingdom,null,null,null,59,Male,false
+51bc0208-465a-ea11-80e9-0050560100ae,Account,England,Derby,Alvaston North,51.17,null,Unspecified,false
+0ae4dd00-6493-e911-80e7-0050560100ae,Account,England,North East Derbyshire,Barlow & Holmesfield,11.06,null,Unspecified,false
+96dcc320-5d6b-44e5-ae63-e98262121af3,Customer,England,Sheffield,Dore and Totley,5.63,72,Male,false
+d6f67825-f963-48cb-ae1f-b67bb4bbca26,Customer,England,Cheshire East,Congleton East,53.83,30,Male,true
+e3424258-04e1-4c07-9d71-089736a9cd49,Customer,England,Derbyshire Dales,Chatsworth,16.95,79,Male,false
+e3ae712c-55ed-4371-ab92-d3442b7fce48,Account,England,Chesterfield,Brockwell,14.67,null,Unspecified,false
+42672d89-f22f-413c-a862-18ca6c17887d,Customer,United Kingdom,null,null,null,55,Male,true
+2c30360d-76b0-4f96-9ddc-764ee63ff59c,Customer,England,Sheffield,Stocksbridge and Upper Don,14.05,70,Male,false
+25839df4-730d-4d6e-9090-5db6482b6188,Customer,England,Rotherham,Anston & Woodsetts,19.01,56,Male,false
+c5720ec5-ca66-e911-80e5-0050560100ae,Customer,England,North East Derbyshire,Eckington South & Renishaw,12.57,36,Unspecified,true
+6b5c709c-bf30-47bc-a18a-520e1c537dfc,Account,England,Rotherham,Rotherham East,12.26,null,Unspecified,false
+7d4ef7b2-f502-4d2b-900c-c2907163a256,Customer,England,Chesterfield,Dunston,11.61,46,Male,false
+04391234-38eb-4b0a-b957-a42ca5941328,Account,England,North East Derbyshire,Barlow & Holmesfield,11.06,null,Unspecified,false
+2e760591-624c-4056-abd4-2c7c5c42fbff,Account,England,Rotherham,Boston Castle,8.42,null,Unspecified,false
+a3eae651-b424-4f86-bffb-829ea8835f85,Customer,England,Bassetlaw,Tuxford and Trent,41.16,44,Male,false
+1d3452b3-0bc0-4ab1-9136-42e84d4b4719,Customer,England,North Northamptonshire,Desborough,104.92,53,Male,false
+55eb0bbf-3d0e-4679-b2ea-582b692e965d,Customer,England,Chesterfield,Staveley Central,14.64,76,Male,false
+4694738a-9136-4b0c-b974-4faaf4dd790a,Account,England,Sheffield,Darnall,3.58,null,Unspecified,false
+e01c7046-20c2-4255-8f72-592b2df5a9fb,Account,England,Rotherham,Rawmarsh West,11.60,null,Unspecified,false
+213df4b6-874e-465d-b8cc-0df1b50c967d,Customer,England,Bolsover,Barlborough,14.85,50,Male,true
+5945a17f-ef21-47f2-a2b4-59567bb491a7,Customer,England,Rotherham,Aughton & Swallownest,9.39,60,Male,false
+940f6d6c-1166-4e66-a215-2681643f0b54,Customer,England,"Bristol, City of",Central,226.68,61,Male,true
+eaf5f580-f103-4e23-8738-3548c67fd3b2,Customer,England,Rotherham,Keppel,10.09,71,Male,false
+a1b82655-f3d8-4945-9478-e3bff7f23bff,Customer,England,Rotherham,Keppel,9.32,40,Male,false
+027d24f9-a29d-4bfa-beae-58b4ab0d5a69,Customer,England,Sheffield,Broomhill and Sharrow Vale,2.75,63,Male,false
+4e238778-5a9d-4033-ae14-4519f510cd7e,Customer,England,Sheffield,Richmond,4.20,90,Male,false
+9abe09ec-83f1-b701-fbbf-08ddaf2f68be,Account,England,Sheffield,Walkley,3.58,null,Unspecified,true
+0036cadb-9d2e-ed11-83d1-c4827151ec7b,Account,England,Bassetlaw,Worksop North West,20.35,null,Unspecified,true
+f3156ddf-7a71-486b-8ea1-cbdcef531988,Account,England,Sheffield,City,0.05,null,Unspecified,false
+01ecaf61-563b-ed11-83d1-afe4f709d266,Account,England,North West Leicestershire,Worthington & Breedon,61.78,null,Unspecified,true
+2cca4d01-94fb-4e03-8d12-3284d6898806,Account,England,Sheffield,Shiregreen and Brightside,7.77,null,Unspecified,false
+b9ea4a16-e043-ed11-83d1-f00c21b6812c,Account,England,Rotherham,Aston & Todwick,10.52,null,Unspecified,true
+66b4e4d5-7254-4414-99b3-eeed6f9a1ba0,Customer,England,Sheffield,City,0.05,34,Male,false
+104da421-9f1c-40d2-9773-16121bb675c8,Customer,England,Sheffield,Mosborough,7.49,61,Male,false
+49f008ad-b4bd-e911-80e7-0050560100ae,Customer,England,Rotherham,Thurcroft & Wickersley South,13.66,24,Unspecified,false
+f11ed73b-bd25-42b9-bcfb-712e8eac114a,Customer,England,Sheffield,East Ecclesfield,8.52,19,Male,false
+3226cb02-9712-4976-8c52-39d491032041,Customer,England,Bolsover,Elmton-with-Creswell,19.86,62,Male,true
+4327b667-fc8c-4ec8-903f-8d28f9aa801e,Customer,England,Sheffield,Ecclesall,3.62,67,Male,false
+4493597a-81e4-4356-8e12-b63a90ef2df6,Customer,England,Rotherham,Rotherham West,8.88,39,Male,true
+a2ec1889-aacf-4d90-afaa-aa3e40c3be44,Customer,England,Sheffield,City,0.05,62,Male,false
+12be5131-9bff-45a1-95fb-bb029ea439ef,Customer,England,Sheffield,Graves Park,3.18,49,Male,false
+5e0ee253-27fc-4e10-810a-b4de5fc2a268,Customer,England,Sheffield,Dore and Totley,7.01,66,Male,true
+92084a7c-8ead-476b-a7f3-097a693d6b07,Customer,England,Sheffield,Mosborough,7.70,52,Male,true
+58e10d3b-d1db-4fc9-9d78-f0a39a78910d,Customer,England,Barnsley,Penistone West,19.74,34,Male,false
+6abcd9a1-ab1f-404b-ae92-36fd6c026a91,Customer,England,High Peak,Hope Valley,18.14,85,Male,false
+1172a6c1-aa2d-ec11-8315-f932af7c2055,Customer,England,Derbyshire Dales,Hathersage,12.93,53,Male,true
+b20e7121-6ff2-4f60-90f4-599e8511bde1,Customer,England,North East Derbyshire,Barlow & Holmesfield,11.06,59,Male,true
+c1674bdb-0a70-45a6-bbdb-cd823c4a7368,Account,England,North Lincolnshire,Burton upon Stather & Winterton,58.28,null,Unspecified,false
+4da8a438-4a12-ec11-8315-c1590597c6b7,Customer,null,null,null,null,null,Unspecified,true
+5145c7e2-84e5-4e70-b6e4-99d19a6aacd5,Customer,England,Merton,Merton Park,234.86,null,Male,false
+c1bce03b-7867-47b2-be87-58e4b380345e,Customer,England,Sheffield,City,0.05,58,Female,false
+cda4f7b2-0292-4dde-b660-1b9f17f7a294,Customer,England,Barnsley,Wombwell,17.07,null,Female,false
+5856d579-3273-4753-9338-49dded8d6040,Customer,England,Derbyshire Dales,Hathersage,12.87,26,Female,true
+0c3a6a75-1c69-4ae3-a75c-24c6414f6ef2,Account,England,Chesterfield,Whittington,12.13,null,Unspecified,false
+b568f26c-8680-4e33-91cc-e085fcdec47b,Customer,England,Wiltshire,Winsley & Westwood,235.24,54,Male,true
+59dc4c04-dc3a-ef11-84a5-e3c223650d0d,Account,England,Rotherham,Boston Castle,8.54,null,Unspecified,true
+2776f246-cb09-45ed-95e9-e74f4aac7e96,Account,England,Sheffield,Burngreave,3.96,null,Unspecified,false
+62ff39e2-5c35-4c17-9e2d-43ed4e2c66fb,Customer,England,Sheffield,East Ecclesfield,9.10,65,Female,false
+eeee06ac-4cf1-b701-48b4-08ddd5b5e0c5,Customer,null,null,null,null,null,Unspecified,true
+1acc2e1c-5a45-4314-8fca-12a5aef893a5,Customer,England,Babergh,South East Cosford,220.34,59,Male,true
+c918c5db-1efb-432a-bcd1-30b987905115,Customer,England,Chesterfield,Brampton West & Loundsley Green,15.66,42,Male,true
+c3f730d6-fc69-4442-a229-f077a8eab6f0,Customer,null,null,null,null,49,Unspecified,true
+67771d76-fa8d-4fbf-aadb-bf7d7806fc5c,Account,England,North East Derbyshire,Eckington South & Renishaw,12.81,null,Unspecified,false
+cf5007d1-0ae5-46a4-8961-546b0bc62ee2,Customer,England,Derbyshire Dales,Bradwell,18.06,79,Male,false
+df77f61a-ac8f-49d7-acef-934f2feb6c23,Customer,England,Sheffield,Dore and Totley,7.23,60,Male,false
+6a4b914c-6c5e-4be1-b8b3-751faca5d77f,Customer,England,Sheffield,Stannington,5.71,58,Unspecified,false
+af21bc5b-4f81-495a-949f-eb9b82ecbff3,Customer,England,Sheffield,Nether Edge and Sharrow,1.07,70,Male,false
+533c40f0-0bf8-ee11-8444-c178c8b2856a,Account,Wales,Cardiff,Cathays,240.02,null,Unspecified,true
+2333b0ab-a389-4d82-9586-b003636b68db,Customer,England,Wakefield,Stanley and Outwood East,36.63,68,Male,true
+f1febbb6-7cff-470e-a8de-cad0d036b8b0,Customer,England,Sheffield,Richmond,4.20,90,Male,false
+1b95f74b-34c6-47ea-8a03-38186041ac21,Customer,England,Sheffield,City,0.05,37,Male,false
+2f4759f5-80fc-409e-a459-53c795e24d2f,Customer,England,Sheffield,Fulwood,2.88,56,Unspecified,true
+83cf3fe0-add0-ee11-8444-d8d378348aaa,Customer,null,null,null,null,null,Unspecified,true
+c2460733-a77e-4f28-81a5-6b5572cff015,Customer,England,North East Derbyshire,Ridgeway & Marsh Lane,6.39,71,Male,false
+7b4e6b96-c171-ef11-84bd-ffedec64349b,Customer,England,Sheffield,West Ecclesfield,11.41,null,Unspecified,true
+65591a2e-6caa-4788-ad85-87a5013f0353,Customer,England,Wiltshire,Chippenham Cepen Park & Hunters Moon,219.29,29,Male,true
+2e484acc-dcda-477f-82ea-67bd457f9080,Customer,England,Sheffield,City,0.05,65,Male,false
+13906f23-288a-4c40-a092-a80e902cb436,Customer,England,High Peak,Hope Valley,14.74,70,Unspecified,false
+98f9493a-50c2-43d1-9af3-d91f34fe33dd,Customer,England,Rotherham,Thurcroft & Wickersley South,13.60,61,Male,true
+72a1eeb9-4645-468c-9084-8bd6cd5bd12c,Customer,England,Sheffield,Broomhill and Sharrow Vale,1.36,71,Male,false
+e2a6f5be-3414-ee11-8444-eb83a7fbfef0,Customer,United Kingdom,null,null,null,71,Unspecified,true
+466b709d-8e8c-ef11-84e2-91fee3c1b6a0,Account,null,null,null,null,null,Unspecified,true
+85e80255-ee22-4bd0-9b5a-ce1e29e0249c,Customer,England,North East Derbyshire,Dronfield Woodhouse,7.47,91,Male,false
+760f8ed7-4d6b-ed11-83d1-9957dab513f7,Account,England,Derbyshire Dales,Hathersage,12.57,null,Unspecified,true
+33060962-ee18-4a16-8ea6-d5bb9daeaf91,Account,England,Sheffield,Darnall,4.84,null,Unspecified,false
+8e847c03-69b4-4dbe-9a3d-55b1fd7952cf,Customer,England,Amber Valley,Duffield & Quarndon,42.84,63,Male,false
+7ce5130f-dddf-eb11-830b-8d6dafdda11c,Account,England,Rotherham,Dalton & Thrybergh,14.78,null,Unspecified,true
+cd250810-9bf1-b701-b744-08dd8d59e4c1,Customer,null,null,null,null,null,Unspecified,true
+e35538ee-fb06-467b-a782-6088ae0bd6d4,Customer,England,Gosport,Harbourside & Town,287.63,64,Male,true
+e0be9aa8-f64c-4ead-9109-18c331cc8a23,Customer,England,Forest of Dean,Longhope & Huntley,178.16,59,Male,true
+faf6fe96-82a1-4530-a178-f6cae97e5443,Customer,England,Rotherham,Wales,14.98,78,Male,false
+ac880201-0078-905e-5daa-08de291ee08e,Account,England,Warrington,Bewsey and Whitecross,74.66,null,Unspecified,true
+6d62d53d-8ecc-4543-a6d0-6d73c5369c9b,Customer,England,Sheffield,Walkley,2.45,58,Female,false
+c50cc861-768d-4771-8923-78481701e8d1,Customer,England,North West Leicestershire,Worthington & Breedon,61.78,58,Male,true
+c38ba80a-5d12-4c3c-8d3f-a93b0b1b4691,Customer,England,Sheffield,Park and Arbourthorne,3.70,58,Male,false
+177befa1-2a94-e911-80e7-0050560100ae,Customer,England,Sheffield,Beighton,9.37,null,Male,false
+257f13a5-83b3-e911-80e7-0050560100ae,Account,England,North East Derbyshire,Holmewood & Heath,21.20,null,Unspecified,false
+e1eafab0-9b8c-4cb9-b682-70ed6d6edce7,Customer,England,Bolsover,Barlborough,15.74,47,Male,false
+723b43ea-e082-4d6e-9e39-1214f0c27001,Customer,England,Sheffield,City,0.05,null,Unspecified,false
+ef9b224f-7d13-4d4c-b24a-5171acd36c9c,Customer,England,Derbyshire Dales,Chatsworth,15.56,43,Male,true
+cd6685fe-526d-4d0e-90ab-5abe31174d76,Account,England,Rotherham,Wath,17.90,null,Unspecified,false
+a647e976-7c8e-431e-9c64-2201acadb7f4,Customer,England,Barnsley,Dearne North,21.78,57,Male,false
+ef72ad41-8697-481f-b4c3-9d0ec201ac5f,Customer,England,Bassetlaw,Clayworth,37.72,51,Male,true
