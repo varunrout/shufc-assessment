@@ -103,7 +103,6 @@ This document outlines the data loading, cleaning, and quality monitoring approa
 
 ### 6.1 Recommended Framework
 
-Use **Great Expectations** or similar tools for automated validation:
 
 ```python
 # Example validation rules
@@ -162,5 +161,3 @@ After cleaning, the following datasets are available for analysis:
 
 ---
 
-*Document generated: February 2026*
-*Project: Sheffield United FC Ticket Sales Analysis*
