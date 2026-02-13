@@ -46,7 +46,7 @@ This document outlines the data loading, cleaning, and quality monitoring approa
 - **Age is not applicable for Accounts**: 71 of 92 missing age values are business accounts, not individuals
 - **Geographical data is England-specific**: District and ward are English administrative divisions, unavailable for Scotland, Wales, NI, and international customers
 - **No duplicate IDs**: Both datasets have unique primary keys
-- **No truly missing customers**: All orphan tickets trace back to excluded (non-England) customers
+- **All customers retained**: Non-England customers flagged rather than excluded to avoid bias
 
 ---
 
@@ -59,25 +59,43 @@ This document outlines the data loading, cleaning, and quality monitoring approa
 | 1 | Convert date columns to datetime format | Enabled date validation |
 | 2 | Verify no duplicate customer IDs | 0 duplicates found ✓ |
 | 3 | Verify no duplicate transaction IDs | 0 duplicates found ✓ |
-| 4 | Exclude customers with missing geographical data | 28 customers removed |
-| 5 | Remove orphaned tickets (referencing excluded customers) | ~4,000 tickets removed |
+| 4 | Retain non-England customers with flag | Created `is_england_customer` flag for 28 customers |
+| 5 | Retain all tickets | No customers excluded, no orphan tickets |
 | 6 | Validate date logic (transaction_date ≤ event_date) | Invalid records flagged |
 | 7 | Validate age range (0-120) | All ages valid ✓ |
 | 8 | Validate distance is positive | All distances valid ✓ |
 
-### 4.2 Handling Missing Ages
+### 4.2 Non-England Customer Handling
+
+**Decision: Retain with Flag (NOT Exclude)**
+
+| Category | Count | Flag Value |
+|----------|-------|------------|
+| England customers | 249 | `is_england_customer = True` |
+| Non-England customers | 28 | `is_england_customer = False` |
+
+**Why retention is better than exclusion:**
+- **International hospitality customers** are potentially high-value (corporate buyers, overseas fans)
+- **Corporate buyers** may not have ward/district data but represent significant revenue
+- **Excluding non-England customers biases the dataset** toward local fans
+- **Scottish, Welsh, NI customers** are still UK-based and relevant for analysis
+
+**Usage guidance:**
+> Geographical variables (`district`, `ward`, `distance_to_bramall_lane_km`) are England-specific. Non-England customers are retained and analysed separately where geographical features are required. Filter on `is_england_customer == True` for distance-based analysis.
+
+### 4.3 Handling Missing Ages
 
 | Customer Type | Missing Age | Decision |
 |---------------|-------------|----------|
 | **Account** (business entity) | 71 | Retain — age is not applicable for organisations |
 | **Customer** (individual) | 21 | Retain — affects only 1.86% of tickets; exclude only for age-specific analysis |
 
-### 4.3 Cleaning Results
+### 4.4 Cleaning Results
 
 | Dataset | Original | Cleaned | Retained |
 |---------|----------|---------|----------|
-| Customers | 277 | 249 | 89.9% |
-| Tickets | 43,289 | ~39,000 | ~90% |
+| Customers | 277 | 277 | 100% |
+| Tickets | 43,289 | 43,289 | 100% |
 
 ---
 
@@ -146,8 +164,20 @@ After cleaning, the following datasets are available for analysis:
 
 | Dataset | Variable Name | Records | Use Case |
 |---------|---------------|---------|----------|
-| Cleaned Tickets | `ticket_sales_df_clean` | ~39,000 | All ticket analysis |
-| Cleaned Customers | `customers_df_clean` | 249 | Customer segmentation, demographics |
+| Cleaned Tickets | `ticket_sales_df_clean` | 43,289 | All ticket analysis |
+| Cleaned Customers | `customers_df_clean` | 277 | Customer segmentation, demographics |
+
+### New Column Added
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `is_england_customer` | Boolean | `True` for England customers with complete geographical data; `False` for non-England customers |
+
+### Usage Notes
+
+- **All analysis**: Use full datasets — no records excluded
+- **Geographical analysis**: Filter on `customers_df_clean[customers_df_clean['is_england_customer'] == True]`
+- **Distance-based segmentation**: Only available for England customers
 
 ---
 
