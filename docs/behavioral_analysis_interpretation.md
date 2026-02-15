@@ -1,314 +1,133 @@
-# Behavioural Analysis — Interpretation & Findings
+# Behavioural Analysis  - Interpretation & Findings
 
 ## Overview
 
-This document interprets the outputs of `02_behavioral_analysis.ipynb`, translating the data into commercially relevant insights for Sheffield United FC's hospitality operation.
+Interpretation of `02_behavioral_analysis.ipynb`. Working with 43,289 tickets across 54 events, 256 unique purchasers and 276 unique owners.
 
-**Dataset scope:** 43,289 tickets across 54 events, involving 256 unique purchasers and 276 unique owners.
+## First things first: what are "Accounts"?
 
----
+This tripped me up initially. You might assume `customer_type = 'Account'` means reseller/distributor accounts (Ticketmaster-type intermediaries buying blocks). But the data says otherwise:
 
-## Important: What Does "Account" Mean in This Data?
+- 83.1% of Account tickets are season ticket holders  - these are season-long commitments, not resale blocks
+- They sit in The Pavilion (58%), Tony Currie Suite (22%), 1889 Restaurant (20%)  - premium hospitality areas, not general admission
+- Top accounts buy 16-113 seats per match across 39-48 events  - fixed multi-seat allocations, consistent all season
+- All 75 Accounts have `gender = Unspecified` and `age = null`  - business entities
+- Every Account has exactly 1 unique owner (itself), 100% self-purchase
 
-Before interpreting the findings, it is essential to clarify what `customer_type = 'Account'` represents. An initial reading might suggest these are reseller/distributor accounts (like Ticketmaster or BookMyShow) that buy blocks and redistribute. **The data tells a different story.**
+So these are corporate hospitality clients  - businesses holding season-long packages with a fixed number of premium seats at every home match. They buy for staff entertainment, client hosting, corporate relationship-building. Not resellers, not individuals using a business account.
 
-### Evidence from the Data
+The `owner_id = purchaser_id` thing is important: it doesn't mean seats go unused. It means the CRM records the corporate entity as the owner, not the actual people sitting in those seats. When Account #1 buys 113 seats, those are almost certainly occupied by a mix of staff, clients, and guests  - but the data doesn't tell us who. This matters a lot for how we read the gifting numbers later.
 
-| Signal | Finding | Interpretation |
-|--------|---------|----------------|
-| **client_type** | 83.1% of Account tickets are "Season Ticket Holder" | These are season-long commitments, not one-off resale blocks |
-| **Venue areas** | Accounts sit in The Pavilion (58%), Tony Currie Suite (22%), 1889 Restaurant (20%) | These are premium hospitality areas inside Bramall Lane — not general admission |
-| **Seats per event** | Top accounts buy 16–113 seats per match, across 39–48 events | Fixed multi-seat allocations per match, consistent across the season |
-| **Demographics** | All 75 Accounts have `gender = Unspecified` and `age = null` | Business entities, not individuals |
-| **Owner pattern** | Every Account has exactly 1 unique owner (itself), 100% self-purchase | The CRM registers the corporate entity as the owner of all its seats |
+## 1. Revenue concentration
 
-### Conclusion: Accounts Are Corporate Hospitality Clients
+The top 5 purchasers account for 29% of all tickets. Top 10 get you to 42%. Top 20 takes you to 58.5%. The Gini coefficient is 0.761, which is extremely concentrated.
 
-**Accounts are businesses that hold season-long hospitality packages** — typically a fixed number of premium seats (a table, a box, a block) in hospitality areas at every home match. They are:
+The bottom 50% of purchasers? Just 4.4% of tickets. Mean tickets per purchaser (169) is 3.7x the median (46)  - classic right-skew from a few super-buyers.
 
-- **NOT resellers** (Ticketmaster-type intermediaries) — resellers would not hold "Season Ticket Holder" status in hospitality suites
-- **NOT individual fans using a business account** — they have no age, no gender, and buy at a scale no individual would (16–113 seats per match)
-- **Corporate clients** — businesses purchasing hospitality for staff entertainment, client hosting, or corporate relationship-building
-
-### Why This Matters for Every Finding Below
-
-The fact that `owner_id` always equals `purchaser_id` for Accounts does **not** mean these seats are unused or self-consumed. It means the data model does not capture who physically sits in the seat. When Account #1 buys 113 seats for a match, those seats are almost certainly occupied by a mix of staff, clients, and guests — but the CRM records the **corporate entity** as the owner, not the individuals. This has a direct impact on how we interpret gifting/hosting behaviour (Section 4).
-
----
-
-## 1. Revenue Is Extremely Concentrated
-
-### The Numbers
-
-| Segment | Purchasers | Tickets | % of All Tickets |
-|---------|-----------|---------|-----------------|
-| Top 5 purchasers | 5 | 12,570 | 29.0% |
-| Top 10 purchasers | 10 | 18,193 | 42.0% |
-| Top 20 purchasers | 20 | 25,315 | 58.5% |
-| Top 5% of purchasers | 12 | 19,705 | 45.5% |
-| Top 10% of purchasers | 25 | 27,794 | 64.2% |
-| Top 50% of purchasers | 128 | 41,376 | 95.6% |
-
-**Gini coefficient: 0.761** — this indicates high concentration, comparable to wealth distribution in developing economies.
-
-### What This Means
-
-- **Five buyers control nearly a third of all hospitality revenue.** This is an extreme dependency. If even one of the top 5 accounts churned, the club would face a material revenue shortfall.
-- **The bottom 50% of purchasers contribute just 4.4% of tickets.** The long tail of small buyers is economically marginal in isolation, but represents the growth opportunity.
-- **The mean tickets per purchaser (169) is 3.7x the median (46).** This skew confirms that a small number of super-buyers dramatically inflate the average, while most purchasers buy far less.
-
-### Top 10 Purchasers — All Corporate Accounts
+Every single top-10 purchaser is a corporate Account. The #1 buyer alone controls 10.2% of all hospitality tickets  - roughly 113 seats per match across 39 events. Several of the top accounts buy exactly 16 or 36 seats per event, which looks like standardised packages (a table, two tables, etc.)  - contractual rather than ad-hoc.
 
 | Rank | Type | Tickets | % of Total | Cumulative % |
 |------|------|---------|-----------|-------------|
-| #1 | Account | 4,402 | 10.2% | 10.2% |
-| #2 | Account | 3,008 | 6.9% | 17.1% |
-| #3 | Account | 1,740 | 4.0% | 21.1% |
-| #4 | Account | 1,728 | 4.0% | 25.1% |
-| #5 | Account | 1,692 | 3.9% | 29.0% |
-| #6 | Account | 1,404 | 3.2% | 32.2% |
-| #7 | Account | 1,220 | 2.8% | 35.0% |
-| #8 | Account | 1,175 | 2.7% | 37.7% |
-| #9 | Account | 960 | 2.2% | 39.9% |
-| #10 | Account | 864 | 2.0% | 41.9% |
+| 1 | Account | 4,402 | 10.2% | 10.2% |
+| 2 | Account | 3,008 | 6.9% | 17.1% |
+| 3 | Account | 1,740 | 4.0% | 21.1% |
+| 4 | Account | 1,728 | 4.0% | 25.1% |
+| 5 | Account | 1,692 | 3.9% | 29.0% |
+| 6 | Account | 1,404 | 3.2% | 32.2% |
+| 7 | Account | 1,220 | 2.8% | 35.0% |
+| 8 | Account | 1,175 | 2.7% | 37.7% |
+| 9 | Account | 960 | 2.2% | 39.9% |
+| 10 | Account | 864 | 2.0% | 41.9% |
 
-Every single top-10 purchaser is a corporate Account. The largest buyer alone controls 10.2% of all hospitality tickets — approximately 113 seats per match across 39 events.
+This is fundamentally a key account management problem. The hospitality revenue is structurally dependent on a handful of corporate relationships. If even one of the top 5 churned, it would be a material shortfall. Formal retention programme for the top 20 isn't optional.
 
-Notably, many of these top accounts buy **exactly 16 or 36 seats per event**, suggesting standardised hospitality packages (e.g., a table of 16 in The Pavilion, two tables of 18 in the Tony Currie Suite). This consistency implies contractual, season-long commitments rather than ad-hoc purchasing.
+## 2. Corporate-dominant product
 
-### Commercial Implication
+75 corporate Accounts generate 77.6% of all tickets (avg 448 per account). 181 individual Customers produce the remaining 22.4% (avg 54 each). The hospitality product is B2B at its core.
 
-This is a **key account management problem**. The club's hospitality revenue is structurally dependent on a handful of corporate relationships. A formal key account retention programme with dedicated relationship managers for the top 20 buyers is not optional — it is essential infrastructure.
+83% of Account tickets are season-long commitments  - not ad-hoc bookings. Accounts buy 8.4x more per purchaser than individuals, which makes sense structurally: a corporate account holds a table or box with multiple seats at every match, while an individual buys single seats.
 
----
+Individuals split about 50/50 between season and match-by-match purchasing. There are more individual purchasers by headcount (181 vs 75) but they're commercially secondary by volume.
 
-## 2. This Is a Corporate Hospitality Product
+What this means for sales strategy: the primary focus has to be corporate account acquisition and retention  - that's where 78% of volume sits, and these are B2B relationship sales, not consumer marketing. Growing the individual base is the secondary play, and the 50/50 season-vs-match split suggests there's room to convert match-by-match buyers into season holders.
 
-### The Numbers
+## 3. Repeat behaviour
 
-| Purchaser Type | Purchasers | Tickets | % of Tickets | Avg Tickets/Purchaser |
-|---------------|-----------|---------|-------------|----------------------|
-| **Account** | 75 | 33,594 | 77.6% | 447.9 |
-| **Customer** | 181 | 9,695 | 22.4% | 53.6 |
+94.1% of purchasers are repeat buyers. 100% of ticket volume comes from repeat purchasers. The 15 one-time buyers collectively contributed zero additional tickets  - likely recent single-event purchases or trials.
 
-| client_type breakdown | Account | Customer |
-|-----------------------|---------|----------|
-| Season Ticket Holder | 83.1% | 50.6% |
-| Match by Match Ticket Holder | 16.9% | 49.4% |
+Accounts attend an average of 30.5 out of 54 events. Individual Customers average 20.5 events. Both numbers are high  - this is a loyalty-anchored product. The main revenue risk isn't acquisition failure, it's churn from established accounts.
 
-### What This Means
+## 4. Gifting and hosting
 
-- **75 corporate Accounts generate 77.6% of all hospitality tickets.** The hospitality product is fundamentally B2B.
-- **83% of Account tickets are season-long commitments.** These are not ad-hoc corporate bookings — they are contractual, season-long hospitality packages with fixed seat allocations per match.
-- **Accounts buy 8.4x more tickets per purchaser** than individual Customers (448 vs 54). This reflects the structural difference: an Account holds a table/box with multiple seats at every match, while a Customer buys individual seats match-by-match or for the season.
-- **Individuals are split 50/50** between season and match-by-match, suggesting a mix of committed season hospitality fans and occasional premium-experience buyers.
-- **Individuals represent the majority of unique purchasers (181 vs 75)** but contribute only 22.4% of volume. They are numerically dominant but commercially secondary.
+On paper: 97.4% self-purchase (purchaser = owner), only 2.6% gifted. But this is misleading.
 
-### Commercial Implication
+Every Account has exactly 1 unique owner  - itself. So when an Account buys 113 seats, all 113 show up as "self-purchase" even though the actual occupants are clients, guests, and staff. For the 77.6% of tickets held by Accounts, we genuinely can't determine from this data who actually sat in the seat.
 
-The sales and marketing approach should reflect this reality:
+For individual Customers it's more meaningful: 11.8% of their tickets have a different owner. Of those, 68% go to other individuals (friends, family) and 32% go to business accounts. That's real ticket-sharing.
 
-- **Primary focus**: Corporate account acquisition and retention (where 78% of volume sits). These are B2B sales relationships, not consumer marketing targets.
-- **Secondary focus**: Growing the individual customer base to reduce corporate dependency. The 50/50 season-vs-match split among individuals suggests an opportunity to convert match-by-match buyers into season holders.
-- **Product development**: Packages and pricing are structured around corporate table/box allocations. Individual options are complementary but could be expanded.
+Given that Accounts hold season-long packages in premium hospitality areas, it's commercially reasonable to assume a big chunk of those seats go toward client entertainment. That's what hospitality suites are for. But we can't confirm it from the data.
 
----
+This is the biggest data gap in the entire analysis. If the CRM could track individual guests for Account seats (via `owner_id` extension, post-event surveys, or check-in data), the real gifting/hosting rate could be 50%+ rather than 2.6%. That would fundamentally change the strategic picture.
 
-## 3. Repeat Behaviour Is Exceptionally Strong
+## 5. Season trends
 
-### The Numbers
-
-| Metric | Value |
-|--------|-------|
-| Repeat purchasers (>1 transaction) | 241 (94.1%) |
-| One-time purchasers | 15 (5.9%) |
-| Tickets from repeat purchasers | 43,289 (100.0%) |
-| Tickets from one-time purchasers | 0 (0.0%) |
-
-| By Type | Total | Repeat | Repeat Rate | Avg Transactions | Avg Events |
-|---------|-------|--------|-------------|-----------------|------------|
-| **Account** | 75 | 73 | 97.3% | 447.9 | 30.5 |
-| **Customer** | 181 | 168 | 92.8% | 53.6 | 20.5 |
-
-### What This Means
-
-- **94.1% of all purchasers are repeat buyers** — this is an extraordinarily high loyalty signal. The hospitality product creates recurring, relationship-driven revenue.
-- **100% of ticket volume comes from repeat purchasers.** The 15 one-time purchasers collectively bought zero additional tickets — their transactions are likely very recent single-event purchases or trial buyers who haven't yet returned.
-- **Accounts attend an average of 30.5 events** out of 54 total — over half of all available matches. These are season-long corporate partners, not occasional users.
-- **Individual Customers attend 20.5 events on average** — still substantial. Even the individual fan base shows strong repeat engagement.
-
-### Commercial Implication
-
-This is a **loyalty-anchored revenue model**. The primary revenue risk is not acquisition failure — it is churn from key accounts. Retention strategy should include:
-
-- Season-long packages and early renewal incentives
-- Dedicated hospitality relationship management
-- Post-event feedback loops to maintain satisfaction
-- Recognition programmes for long-standing accounts
-
----
-
-## 4. Gifting/Hosting — Data Limitation, Not Absence
-
-### The Numbers (As Recorded)
-
-| Metric | Count | % |
-|--------|-------|---|
-| Self-purchase (purchaser = owner) | 42,142 | 97.4% |
-| Gifted/hosted (purchaser ≠ owner) | 1,147 | 2.6% |
-
-| Purchaser Type | Total Tickets | Gifted | Gifted Rate |
-|---------------|--------------|--------|-------------|
-| **Account** | 33,594 | 0 | 0.0% |
-| **Customer** | 9,695 | 1,147 | 11.8% |
-
-**When tickets are gifted (Customer → Owner):**
-
-| Flow | Tickets | % of Gifted |
-|------|---------|-------------|
-| Customer → Customer | 779 | 67.9% |
-| Customer → Account | 368 | 32.1% |
-
-### What This Actually Means
-
-**The 97.4% "self-purchase" figure is misleading.** It does not mean 97.4% of hospitality attendees bought their own ticket.
-
-The data shows that every single Account has exactly 1 unique owner — itself. When a corporate Account buys 113 seats for a match, all 113 are recorded with `owner_id = purchaser_id` (the Account). The actual humans occupying those seats — clients, guests, staff, partners — are invisible in this data model.
-
-This means:
-
-- **For Accounts (77.6% of tickets)**: We genuinely cannot determine from this data whether seats are used for client hosting, staff perks, or personal attendance by company directors. The CRM does not track end-users at the seat level for corporate hospitality packages.
-- **For individual Customers (22.4%)**: The gifting signal is real. 11.8% of individual tickets have a different owner, split between other individuals (68%) and business accounts (32%). This represents genuine ticket-sharing — likely friends, family, or personal networks.
-
-### What We Can Infer (But Not Prove)
-
-Given that Accounts:
-- Hold **season-long hospitality packages** with 16–113 seats per match
-- Sit in **premium hospitality areas** (The Pavilion, Tony Currie Suite, 1889 Restaurant)
-- Are **business entities** with no age, no gender, and "Unspecified" demographics
-
-It is commercially reasonable to assume a significant proportion of Account seats are used for **client entertainment and corporate hosting** — this is the standard use case for premium hospitality suites in professional football. However, **this cannot be confirmed from the ticket data alone**.
-
-### Recommendation
-
-This is the single most important data gap in the analysis:
-
-1. **Investigate with the CRM/ticketing team** whether `owner_id` can be extended to track individual guests for Account seats
-2. **Post-event surveys or check-in data** would reveal the true guest-vs-staff split
-3. **If corporate hosting is confirmed at scale**, the gifting rate is not 2.6% — it could be 50%+ of all tickets, fundamentally changing the strategic picture
-
----
-
-## 5. Season-over-Season Trends
-
-### The Numbers
+Comparing 2024/25 to 2025/26 (excluding 2023/24 which had only 223 tickets from one purchaser  - probably pre-season residual):
 
 | Metric | 2024/25 | 2025/26 |
 |--------|---------|---------|
 | Tickets | 23,355 | 19,711 |
-| Unique Purchasers | 204 | 155 |
-| Avg Tickets/Purchaser | 114.5 | 127.2 |
-| Account % | 80.0% | 75.6% |
-| Repeat Rate | 95.1% | 96.1% |
-| Gifted Rate | 1.8% | 3.7% |
-| Top 10 Concentration | 43.3% | 44.4% |
+| Unique purchasers | 204 | 155 |
+| Avg tickets/purchaser | 114.5 | 127.2 |
+| Account share | 80.0% | 75.6% |
+| Repeat rate | 95.1% | 96.1% |
+| Gifted rate | 1.8% | 3.7% |
 
-*(2023/24 excluded from comparison — only 223 tickets from a single purchaser, likely pre-season or residual data.)*
+Volume is down 15.6% but the 2025/26 season might be incomplete at time of analysis, so don't read too much into the absolute decline. More interesting: fewer purchasers but higher spend per buyer, suggesting the remaining base is deepening commitment. Account share dropped slightly (healthy diversification). Repeat rate is rock-solid. Gifting doubled  - still small but worth watching as a potential referral channel.
 
-### What This Means
+## 6. Behavioural segmentation (KMeans)
 
-- **Ticket volume declined by 15.6%** (23,355 → 19,711) from 2024/25 to 2025/26. However, the 2025/26 season may be incomplete at the time of analysis, so this may not reflect a true decline.
-- **Fewer purchasers but higher spend per buyer.** Average tickets per purchaser rose from 114.5 to 127.2, suggesting the remaining buyers are deepening their commitment.
-- **Account share decreased slightly** from 80.0% to 75.6%. Individual Customer participation is growing marginally, which is a healthy diversification signal.
-- **Repeat rate is stable and high** (95.1% → 96.1%). Retention is not declining.
-- **Gifting rate doubled** from 1.8% to 3.7%. Still small in absolute terms but trending upward — could indicate growing social/referral behaviour.
-- **Concentration is stable** (43.3% → 44.4%). The top 10 share is not worsening but remains high.
+Applied KMeans clustering to all 256 purchasers using four transactional features: log-transformed ticket volume, transaction count, unique areas, and unique events. All standardised before clustering. Elbow plot pointed to k=4.
 
-### Commercial Implication
+The four segments:
 
-The hospitality product shows a **stable, loyal core** with early signs of healthy diversification. The priority should be:
+| Segment | n | Tickets | Avg tickets | Avg events | % Accounts | Ticket share |
+|---------|---|---------|------------|-----------|-----------|-------------|
+| Anchor Buyers | 8 | 16,369 | 2,046 | 46 | 100% | 37.8% |
+| Core Regulars | 154 | 24,407 | 159 | 33 | 32.5% | 56.4% |
+| Occasional Buyers | 14 | 2,041 | 146 | 26 | 42.9% | 4.7% |
+| Light Touch | 80 | 472 | 6 | 2 | 13.8% | 1.1% |
 
-1. Reversing the purchaser count decline — fewer buyers is a warning signal even if per-buyer spend is rising
-2. Accelerating the small shift toward individual Customer growth
-3. Monitoring whether the gifting trend continues — this could be an untapped referral channel
+Anchor Buyers are the 8 corporate super-accounts  - all the top purchasers from section 1. 37.8% of all tickets from just 8 entities. Losing one would hurt.
 
----
+Core Regulars are the backbone: 154 purchasers (mix of 32.5% accounts and 67.5% individuals), 33 events average, 56.4% of ticket share. Reliable mid-volume buyers. Retention strategies here need to work for both corporate renewals and individual loyalty since the segment is mixed.
 
-## 6. Behavioural Segmentation (KMeans Clustering)
+Occasional Buyers (14 purchasers) look similar to Core Regulars per-person (~146 avg tickets) but attend fewer events. Could be seasonal buyers or fixture-specific corporate activations.
 
-### Approach
+Light Touch is the conversion opportunity: 80 purchasers (86% individuals) buying an average of 6 tickets each. Trial buyers, one-off experience seekers. Individually marginal but collectively the largest growth pool. Multi-match taster packages or post-first-visit follow-ups could shift some of these up.
 
-To formalise the purchasing patterns observed above, a KMeans clustering was applied to all 256 purchasers (Accounts and Customers combined). Four behavioural features were used — all purely transactional, requiring no demographic data:
+The Anchor + Core pipeline accounts for 94.2% of tickets from 63% of the base. That's the revenue engine. Light Touch is where future growth comes from.
 
-1. **log_tickets** — log-transformed total tickets purchased
-2. **transaction_count** — number of distinct transactions
-3. **unique_areas** — diversity of hospitality areas used
-4. **unique_events** — number of distinct events attended
+## 7. Pulling it together
 
-Features were standardised (z-scored) before clustering. An elbow plot (k = 2–8) confirmed k = 4 as the optimal choice, with diminishing inertia reductions beyond that point.
+The hospitality operation is high-concentration, corporate-led, loyalty-driven. Built on season-long corporate packages.
 
-### The Four Segments
+Strengths: 94% repeat rate, 83% of Account tickets on season commitments  - these are deep contractual relationships. The loyalty base is genuinely strong.
 
-| Segment | Purchasers | Total Tickets | Avg Tickets | Avg Events | % Accounts | Ticket Share |
-|---------|-----------|---------------|-------------|------------|------------|-------------|
-| **Anchor Buyers** (high-volume repeat) | 8 | 16,369 | 2,046 | 46 | 100% | 37.8% |
-| **Core Regulars** (mid-volume steady) | 154 | 24,407 | 159 | 33 | 32.5% | 56.4% |
-| **Occasional Buyers** (low-volume repeat) | 14 | 2,041 | 146 | 26 | 42.9% | 4.7% |
-| **Light Touch** (minimal engagement) | 80 | 472 | 6 | 2 | 13.8% | 1.1% |
+Vulnerability: revenue dangerously concentrated. Five buyers control 29% of tickets. They're direct corporate clients (not resellers), so the club has the relationship to protect  - but also the responsibility to.
 
-### What This Means
+Opportunity: individual Customers are under-developed at 22.4% of volume. 181 purchasers split 50/50 between season and match-by-match. There's headroom to convert casual buyers into committed season holders.
 
-- **Anchor Buyers (8 purchasers, 37.8% of tickets):** All 8 are corporate Accounts. These are the super-buyers identified in Section 1 — season-long hospitality package holders purchasing thousands of tickets each across 46+ events on average. They are the revenue anchor. Losing even one would create a material shortfall.
-- **Core Regulars (154 purchasers, 56.4% of tickets):** The largest segment by headcount and the biggest by ticket share. A mix of Accounts (32.5%) and individual Customers (67.5%), attending 33 events on average. This is the commercial backbone — reliable, mid-volume, cross-type. The blended Account/Customer composition means retention strategies need to work for both corporate renewals and individual loyalty.
-- **Occasional Buyers (14 purchasers, 4.7% of tickets):** A small group buying a similar per-person volume to Core Regulars (~146 avg tickets) but attending fewer events (26 vs 33). They may be seasonal hospitality buyers, corporate clients who activate for specific fixtures, or individuals with inconsistent commitment. The 43% Account share suggests a mix of both.
-- **Light Touch (80 purchasers, 1.1% of tickets):** 80 purchasers contributing just 472 tickets — an average of 6 tickets and 1.5 events each. Overwhelmingly individual Customers (86%). These are trial buyers, one-off experience seekers, or lapsed purchasers. Individually marginal, but collectively they represent the largest conversion opportunity: moving even a fraction into Core Regulars would meaningfully diversify the base.
+The biggest data gap: the CRM doesn't track who sits in Account seats. If corporate hosting is the dominant use case (standard for hospitality suites), the club is missing insight into thousands of end-users who experience the product but are invisible in the data. These hidden guests could be a major marketing and conversion opportunity.
 
-### Commercial Implication
+### What to do about it
 
-The clustering quantifies what the earlier sections hinted at:
+In rough priority order:
 
-1. **The "Anchor → Core" pipeline is the revenue engine.** Together these two segments account for 94.2% of all tickets from just 162 purchasers (63% of the base).
-2. **The Light Touch segment is the growth pool.** 80 purchasers buying an average of 6 tickets each is a conversion challenge, not a lost cause. Multi-match taster packages, group hospitality offers, and targeted post-first-visit follow-ups could shift some of these into Core Regulars.
-3. **Retention priority is clear**: Anchor Buyers need key account management; Core Regulars need loyalty rewards and renewal incentives; Light Touch need onboarding journeys.
-4. **Occasional Buyers are a monitoring segment**: their mid-volume but variable engagement may respond to fixture-specific marketing or flexible mini-season packages.
-
----
-
-## 7. Strategic Summary
-
-### Revenue Health Assessment
-
-| Dimension | Status | Risk Level |
-|-----------|--------|-----------|
-| Revenue concentration | Top 10 = 42% of tickets | **High** |
-| Corporate dependency | Accounts = 77.6% of volume | **High** |
-| Repeat loyalty | 94.1% repeat rate | **Strong** (low risk) |
-| Gifting/hosting | 2.6% recorded — but Account end-users are untracked | **Unknown** (data gap) |
-| Season trend | Stable concentration, slight purchaser decline | **Medium** |
-| Segmentation | 4 clear behavioural clusters confirmed by KMeans | **Actionable** |
-
-### The Core Story
-
-Sheffield United FC's hospitality operation is a **high-concentration, corporate-led, loyalty-driven product** built on season-long corporate hospitality packages:
-
-1. **Strength**: Exceptional repeat purchase rates (94%) and season-long commitments (83% of Account tickets are season packages) indicate deep, contractual relationships — not transactional purchasing.
-2. **Vulnerability**: Revenue is dangerously concentrated among a small number of corporate accounts. Five buyers control 29% of all tickets. These are not resellers — they are direct corporate clients, which means the club has a direct relationship to protect.
-3. **Opportunity**: The individual Customer segment (22.4% of volume) is under-developed. With 181 individual purchasers split 50/50 between season and match-by-match purchases, there is clear headroom to convert casual buyers into committed season holders.
-4. **Segmentation validates strategy**: KMeans clustering (k=4) formalised four distinct commercial segments — Anchor Buyers (8 corporate super-accounts, 37.8% of tickets), Core Regulars (154 mixed-type steady buyers, 56.4%), Occasional Buyers (14, 4.7%), and Light Touch (80 minimal-engagement buyers, 1.1%). Each segment demands a different retention/growth approach.
-5. **Critical data gap**: The CRM does not track who actually occupies Account seats. If corporate hosting is the dominant use case (as is typical for hospitality suites), the club is missing insight into potentially thousands of end-users who experience the product but are invisible in the data. These "hidden guests" are an untapped marketing and conversion opportunity.
-
-### Recommended Actions
-
-| Priority | Action | Expected Impact |
-|----------|--------|----------------|
-| **Critical** | Implement key account management for top 20 buyers | Protect 58.5% of revenue |
-| **Critical** | Investigate `owner_id` data capture for Accounts | Unlock insight into thousands of hidden end-users |
-| **High** | Develop individual Customer growth strategy | Reduce concentration risk |
-| **High** | Design segment-specific retention playbooks | Anchor Buyers → key account mgmt; Core Regulars → loyalty rewards; Light Touch → onboarding journeys |
-| **Medium** | Create multi-match taster packages for Light Touch segment | Convert 80 low-engagement buyers into Core Regulars |
-| **Medium** | Create multi-match loyalty packages | Deepen individual repeat behaviour |
-| **Medium** | Introduce referral incentives | Capitalise on growing gifting trend |
-| **Low** | Monitor 2025/26 season completion data | Validate apparent volume decline |
-
----
+1. Key account management for the top 20 buyers  - protects ~58.5% of revenue
+2. Investigate whether `owner_id` can be extended to capture individual guests for Accounts
+3. Build an individual Customer growth strategy to reduce concentration risk
+4. Design segment-specific approaches: key account management for Anchors, loyalty/renewal for Core Regulars, onboarding journeys for Light Touch
+5. Multi-match taster packages for the Light Touch segment
+6. Referral incentives to capitalise on the growing gifting trend
+7. Keep an eye on 2025/26 completion data before concluding volume is actually declining
 
