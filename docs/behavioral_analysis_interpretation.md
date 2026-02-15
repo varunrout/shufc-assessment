@@ -234,7 +234,47 @@ The hospitality product shows a **stable, loyal core** with early signs of healt
 
 ---
 
-## 6. Strategic Summary
+## 6. Behavioural Segmentation (KMeans Clustering)
+
+### Approach
+
+To formalise the purchasing patterns observed above, a KMeans clustering was applied to all 256 purchasers (Accounts and Customers combined). Four behavioural features were used — all purely transactional, requiring no demographic data:
+
+1. **log_tickets** — log-transformed total tickets purchased
+2. **transaction_count** — number of distinct transactions
+3. **unique_areas** — diversity of hospitality areas used
+4. **unique_events** — number of distinct events attended
+
+Features were standardised (z-scored) before clustering. An elbow plot (k = 2–8) confirmed k = 4 as the optimal choice, with diminishing inertia reductions beyond that point.
+
+### The Four Segments
+
+| Segment | Purchasers | Total Tickets | Avg Tickets | Avg Events | % Accounts | Ticket Share |
+|---------|-----------|---------------|-------------|------------|------------|-------------|
+| **Anchor Buyers** (high-volume repeat) | 8 | 16,369 | 2,046 | 46 | 100% | 37.8% |
+| **Core Regulars** (mid-volume steady) | 154 | 24,407 | 159 | 33 | 32.5% | 56.4% |
+| **Occasional Buyers** (low-volume repeat) | 14 | 2,041 | 146 | 26 | 42.9% | 4.7% |
+| **Light Touch** (minimal engagement) | 80 | 472 | 6 | 2 | 13.8% | 1.1% |
+
+### What This Means
+
+- **Anchor Buyers (8 purchasers, 37.8% of tickets):** All 8 are corporate Accounts. These are the super-buyers identified in Section 1 — season-long hospitality package holders purchasing thousands of tickets each across 46+ events on average. They are the revenue anchor. Losing even one would create a material shortfall.
+- **Core Regulars (154 purchasers, 56.4% of tickets):** The largest segment by headcount and the biggest by ticket share. A mix of Accounts (32.5%) and individual Customers (67.5%), attending 33 events on average. This is the commercial backbone — reliable, mid-volume, cross-type. The blended Account/Customer composition means retention strategies need to work for both corporate renewals and individual loyalty.
+- **Occasional Buyers (14 purchasers, 4.7% of tickets):** A small group buying a similar per-person volume to Core Regulars (~146 avg tickets) but attending fewer events (26 vs 33). They may be seasonal hospitality buyers, corporate clients who activate for specific fixtures, or individuals with inconsistent commitment. The 43% Account share suggests a mix of both.
+- **Light Touch (80 purchasers, 1.1% of tickets):** 80 purchasers contributing just 472 tickets — an average of 6 tickets and 1.5 events each. Overwhelmingly individual Customers (86%). These are trial buyers, one-off experience seekers, or lapsed purchasers. Individually marginal, but collectively they represent the largest conversion opportunity: moving even a fraction into Core Regulars would meaningfully diversify the base.
+
+### Commercial Implication
+
+The clustering quantifies what the earlier sections hinted at:
+
+1. **The "Anchor → Core" pipeline is the revenue engine.** Together these two segments account for 94.2% of all tickets from just 162 purchasers (63% of the base).
+2. **The Light Touch segment is the growth pool.** 80 purchasers buying an average of 6 tickets each is a conversion challenge, not a lost cause. Multi-match taster packages, group hospitality offers, and targeted post-first-visit follow-ups could shift some of these into Core Regulars.
+3. **Retention priority is clear**: Anchor Buyers need key account management; Core Regulars need loyalty rewards and renewal incentives; Light Touch need onboarding journeys.
+4. **Occasional Buyers are a monitoring segment**: their mid-volume but variable engagement may respond to fixture-specific marketing or flexible mini-season packages.
+
+---
+
+## 7. Strategic Summary
 
 ### Revenue Health Assessment
 
@@ -245,6 +285,7 @@ The hospitality product shows a **stable, loyal core** with early signs of healt
 | Repeat loyalty | 94.1% repeat rate | **Strong** (low risk) |
 | Gifting/hosting | 2.6% recorded — but Account end-users are untracked | **Unknown** (data gap) |
 | Season trend | Stable concentration, slight purchaser decline | **Medium** |
+| Segmentation | 4 clear behavioural clusters confirmed by KMeans | **Actionable** |
 
 ### The Core Story
 
@@ -253,7 +294,8 @@ Sheffield United FC's hospitality operation is a **high-concentration, corporate
 1. **Strength**: Exceptional repeat purchase rates (94%) and season-long commitments (83% of Account tickets are season packages) indicate deep, contractual relationships — not transactional purchasing.
 2. **Vulnerability**: Revenue is dangerously concentrated among a small number of corporate accounts. Five buyers control 29% of all tickets. These are not resellers — they are direct corporate clients, which means the club has a direct relationship to protect.
 3. **Opportunity**: The individual Customer segment (22.4% of volume) is under-developed. With 181 individual purchasers split 50/50 between season and match-by-match purchases, there is clear headroom to convert casual buyers into committed season holders.
-4. **Critical data gap**: The CRM does not track who actually occupies Account seats. If corporate hosting is the dominant use case (as is typical for hospitality suites), the club is missing insight into potentially thousands of end-users who experience the product but are invisible in the data. These "hidden guests" are an untapped marketing and conversion opportunity.
+4. **Segmentation validates strategy**: KMeans clustering (k=4) formalised four distinct commercial segments — Anchor Buyers (8 corporate super-accounts, 37.8% of tickets), Core Regulars (154 mixed-type steady buyers, 56.4%), Occasional Buyers (14, 4.7%), and Light Touch (80 minimal-engagement buyers, 1.1%). Each segment demands a different retention/growth approach.
+5. **Critical data gap**: The CRM does not track who actually occupies Account seats. If corporate hosting is the dominant use case (as is typical for hospitality suites), the club is missing insight into potentially thousands of end-users who experience the product but are invisible in the data. These "hidden guests" are an untapped marketing and conversion opportunity.
 
 ### Recommended Actions
 
@@ -262,15 +304,11 @@ Sheffield United FC's hospitality operation is a **high-concentration, corporate
 | **Critical** | Implement key account management for top 20 buyers | Protect 58.5% of revenue |
 | **Critical** | Investigate `owner_id` data capture for Accounts | Unlock insight into thousands of hidden end-users |
 | **High** | Develop individual Customer growth strategy | Reduce concentration risk |
+| **High** | Design segment-specific retention playbooks | Anchor Buyers → key account mgmt; Core Regulars → loyalty rewards; Light Touch → onboarding journeys |
+| **Medium** | Create multi-match taster packages for Light Touch segment | Convert 80 low-engagement buyers into Core Regulars |
 | **Medium** | Create multi-match loyalty packages | Deepen individual repeat behaviour |
 | **Medium** | Introduce referral incentives | Capitalise on growing gifting trend |
 | **Low** | Monitor 2025/26 season completion data | Validate apparent volume decline |
 
 ---
 
-## Next Steps
-
-These behavioural findings feed directly into:
-
-- **Notebook 03 — Demographic Analysis**: Who are the key buyers? What are their age, location, and gender profiles? Are non-England customers behaving differently?
-- **Notebook 04 — Recommendations**: Translate behavioural + demographic evidence into actionable commercial strategy
